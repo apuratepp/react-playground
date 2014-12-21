@@ -1,10 +1,15 @@
 var Product = React.createClass({
+  handlesDestroy: function(event) {
+    event.preventDefault();
+
+    this.props.handlesDeletion(event, this.props.product);
+  },
   render: function() {
     return (
-      <div>
-        <h4>{ this.props.product.name }</h4>
-        <h5>{ this.props.product.price }</h5>
-      </div>
+      <li>
+        { this.props.product.name } / { this.props.product.price }&nbsp;
+        <a href="#" onClick={ this.handlesDestroy }>Delete</a>
+      </li>
     )
   }
 });

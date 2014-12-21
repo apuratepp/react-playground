@@ -7,9 +7,13 @@ class HomeController < ApplicationController
 
   def locals
     {
-      products: Product.all.map { |product| product.to_json(root: true) } ,
-      productForm: {
-        action: new_product_path
+      productsList: {
+        source: products_path,
+        form: {
+          action: products_path,
+          csrf_param: request_forgery_protection_token,
+          csrf_token: form_authenticity_token
+        }
       }
     }
   end
