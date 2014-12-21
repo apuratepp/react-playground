@@ -1,0 +1,9 @@
+<h3>Products</h3>
+
+<h4>New Product</h4>
+<%= react_component "ProductForm", productForm %>
+
+<% products.each do |product| %>
+  <%= react_component "Product", product %>
+  <hr />
+<% end %>
