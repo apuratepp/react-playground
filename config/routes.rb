@@ -5,8 +5,15 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
-  root "home#index"
-  resources :products
+  root "admin/products#index"
+
+  namespace :admin do
+    get :products, controller: :products, action: :index
+  end
+
+  namespace :api do
+    resources :products
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
