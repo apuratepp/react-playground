@@ -41,3 +41,4 @@ gem 'spring',        group: :development
 
 gem 'react-rails', '~> 1.0.0.pre', github: 'reactjs/react-rails'
 gem 'quiet_assets'
+gem 'dotenv-rails', :groups => [:development, :test]
